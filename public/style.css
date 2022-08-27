@@ -1,3 +1,7 @@
+body {
+    position: fixed;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -60,8 +64,6 @@ section:last-child {
 }
 
 .elements_popup {
-    margin: auto;
-    margin-top: 10rem;
     height: 10rem;
     width: 20rem;
     background: violet;
@@ -90,10 +92,61 @@ section:last-child {
     cursor: pointer;
 }
 
+.remove_electrons {
+    background: pink;
+    width: 12rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.remove_electrons:hover {
+    cursor: pointer;
+}
+
 .first_column {
     background: yellow;
 }
 
 .second_column {
     background: orange;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 30vh;
+}
+
+.electron {
+    animation: electrons 2s infinite;
+    position: relative;
+    margin-top: -50rem;
+    margin-right: 25rem;
+}
+
+@keyframes electrons {
+    0% {
+        top: 12.5rem;
+        left: 12.5rem;
+    }
+    25% {
+        top: 25rem;
+        left: 25rem;
+    }
+    50% {
+        top: 37.5rem;
+        left: 12.5rem;
+    }
+    75% {
+        top: 25rem;
+        left: 0rem;
+    }
+    100% {
+        top: 12.5rem;
+        left: 12.5rem;
+    }
 }

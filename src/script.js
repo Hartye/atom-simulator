@@ -2,8 +2,9 @@ const diagram = document.querySelector(".diagram");
 let mass_num = 0;
 let prot_num = 0;
 let neut_num = 0;
+let elect_num = 0;
 let atom_name = "";
-let atom_stability = "stable";
+let atom_stability = "Estável";
 
 function remove(element) {
     mass_num--;
@@ -13,8 +14,21 @@ function remove(element) {
     if (element.src == "http://127.0.0.1:5500/public/svg/bxs-circle.svg") {
         neut_num--;
     }
-    element.remove();
     changeAtomSize();
+    element.remove();
+}
+
+function removeElectron(element) {
+    if (element != "all") {
+        elect_num--;
+        element.remove();
+    } else {
+        elect_num = 0;
+        let remove_elect = document.querySelectorAll(".electron");
+        remove_elect.forEach((elect) => {
+            elect.remove();
+        });
+    }
 }
 
 function newBall(n) {
@@ -25,7 +39,7 @@ function newBall(n) {
         if (mass_num < 16) {
             prot_num++;
         }
-    } else {
+    } else if (n == 2) {
         new_ball.src = "../public/svg/bxs-circle.svg";
         if (mass_num < 16) {
             neut_num++;
@@ -35,6 +49,22 @@ function newBall(n) {
     if (mass_num < 16) {
         diagram.appendChild(new_ball);
         newBallAdded();
+    }
+}
+
+function newElectron() {
+    let new_electron = document.createElement("img");
+    new_electron.setAttribute("class", "electron");
+    new_electron.setAttribute("onclick", "removeElectron(this)");
+
+    new_electron.src = "../public/svg/bx-radio-circle.svg";
+
+    if (elect_num < 16) {
+        elect_num++;
+    }
+
+    if (elect_num < 16) {
+        diagram.appendChild(new_electron);
     }
 }
 
@@ -117,9 +147,9 @@ function changeAtomSize() {
     }
 
     if (prot_num == neut_num) {
-        atom_stability = "Stable";
+        atom_stability = "Estável";
     } else {
-        atom_stability = "Unstable";
+        atom_stability = "Instável";
     }
 
     document.querySelector(".atom_stability").innerHTML = atom_stability;

@@ -18,35 +18,51 @@
                 <div class="atom_name_region">
                     <!-- atom name -->
                     <p class="atom_name">N/A</p>
-                    <p class="atom_stability">Stable</p>
+                    <p class="atom_stability">Estável</p>
                 </div>
                 <div class="diagram">
                     <!-- atom animation -->
                 </div>
             </section>
             <section class="second_column">
-                <div class="elements_popup">
-                    <nav>
-                        <ul>
-                            <li>
-                                <img
-                                    src="./svg/bx-circle.svg"
-                                    alt="prótons"
-                                    onclick="newBall(1)"
-                                />
-                                Prótons
-                            </li>
-                            <li>
-                                <img
-                                    src="./svg/bxs-circle.svg"
-                                    alt="neutrons"
-                                    onclick="newBall(2)"
-                                />
-                                Neutrons
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- protons and neutrons popup -->
+                <div class="controls">
+                    <div class="elements_popup">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <img
+                                        src="./svg/bx-circle.svg"
+                                        alt="prótons"
+                                        onclick="newBall(1)"
+                                    />
+                                    Prótons
+                                </li>
+                                <li>
+                                    <img
+                                        src="./svg/bxs-circle.svg"
+                                        alt="neutrons"
+                                        onclick="newBall(2)"
+                                    />
+                                    Neutrons
+                                </li>
+                                <li>
+                                    <img
+                                        src="./svg/bx-radio-circle.svg"
+                                        alt="elétrons"
+                                        onclick="newElectron()"
+                                    />
+                                    Elétrons
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- protons and neutrons popup -->
+                    </div>
+                    <div
+                        class="remove_electrons"
+                        onclick="removeElectron('all')"
+                    >
+                        <p>Remove Electrons</p>
+                    </div>
                 </div>
             </section>
         </main>
