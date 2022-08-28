@@ -1,3 +1,12 @@
+:root {
+    --grey: #B2B1B0;
+    --darker-grey: #727171;
+    --white: #F2F0EF;
+    --whiter-white: #FFFDFC;
+    --darker-white: #D8D6D5;
+    --blue: #3dd5f0;
+}
+
 body {
     position: fixed;
 }
@@ -10,7 +19,18 @@ body {
 
 header {
     height: 2rem;
-    background: cyan;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+}
+
+header nav {
+    margin-left: 2rem;
+}
+
+header nav h1 a {
+    text-decoration: none;
+    color: black;
 }
 
 main {
@@ -39,7 +59,9 @@ section:last-child {
     position: relative;
     width: 10rem;
     padding: 1rem;
-    background: red;
+    background: var(--darker-grey);
+    color: white;
+    border-radius: 1rem;
 }
 
 .atom_name_region p {
@@ -50,13 +72,13 @@ section:last-child {
     height: 5rem;
     width: 5rem;
     margin: auto;
-    background: lightgreen;
+    background: var(--blue);
     border-radius: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: 1rem solid lightgreen;
+    border: 1rem solid var(--blue);
 }
 
 .diagram img {
@@ -66,7 +88,8 @@ section:last-child {
 .elements_popup {
     height: 10rem;
     width: 20rem;
-    background: violet;
+    background: var(--whiter-white);
+    border-radius: 1rem;
 }
 
 .elements_popup nav {
@@ -93,12 +116,13 @@ section:last-child {
 }
 
 .remove_electrons {
-    background: pink;
+    background: var(--whiter-white);
     width: 12rem;
     height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: .5rem;
 }
 
 .remove_electrons:hover {
@@ -106,11 +130,11 @@ section:last-child {
 }
 
 .first_column {
-    background: yellow;
+    background: var(--grey);
 }
 
 .second_column {
-    background: orange;
+    background: var(--grey);
 }
 
 .controls {
